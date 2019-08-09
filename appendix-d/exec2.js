@@ -11,7 +11,7 @@ const beers = [
   { name: "Sapporo", country: "Japan", price: 7.50 }
 ];
 
-const beer = { name: "Stella", country: "Belgium", price: 9.50 };
+//const beer = { name: "Stella", country: "Belgium", price: 9.50 };
 
 const beerObserver = {
   next: function(beer) { console.log(`Subscriber got ${beer.name}`); },
