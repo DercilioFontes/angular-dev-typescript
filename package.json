@@ -23,6 +23,7 @@
     "eslint": "^5.16.0"
   },
   "dependencies": {
+    "rxjs": "^6.5.2",
     "tslint": "^5.18.0"
   }
 }
