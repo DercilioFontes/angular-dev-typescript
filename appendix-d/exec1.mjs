@@ -10,7 +10,7 @@ rxjs.of(1,2,3)
   );
 
 console.log();
-console.log("-------------------------")
+console.log("-------------------------");
 console.log();
 
 const beers0 = [
@@ -33,7 +33,7 @@ rxjs.from(beers0)
 console.log("This is the last line of the script");
 
 console.log();
-console.log("-------------------------")
+console.log("-------------------------");
 console.log();
 
 
