@@ -19,7 +19,27 @@ Angular Development with Typescript
   `tslint --init`
 
 - For Node.js, the first option only works with `node --experimental-modules abcd.mjs`
-(<https://nodejs.org/api/esm.html>)
+  - (<https://nodejs.org/api/esm.html>)
 
   `// import { Observable } from "rxjs";`
   `const { Observable, from } = require("rxjs");`
+
+- To solve using destructing module import, add uncomment `"moduleResolution": "node"` in `tsconfig.json` file.
+  - (<https://stackoverflow.com/questions/36933788/using-rxjs-with-typescript>)
+  - (<https://www.typescriptlang.org/docs/handbook/module-resolution.html>)
+
+- To Debug using VS Code config the `tsconfig.json` file with:
+
+  ```json
+  {
+      "compilerOptions": {
+          ...
+          "module": "commonjs",
+          ...
+          "sourceMap": true,
+          ...
+      }
+  }
+  ```
+
+  - (<https://code.visualstudio.com/docs/typescript/typescript-debugging>)
