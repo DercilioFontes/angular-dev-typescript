@@ -21,8 +21,10 @@ Angular Development with Typescript
 - For Node.js, the first option only works with `node --experimental-modules abcd.mjs`
   - (<https://nodejs.org/api/esm.html>)
 
-  `// import { Observable } from "rxjs";`
-  `const { Observable, from } = require("rxjs");`
+  ```javascript
+  // import { Observable } from "rxjs";`
+  const { Observable, from } = require("rxjs");
+  ```
 
 - To solve using destructing module import, add uncomment `"moduleResolution": "node"` in `tsconfig.json` file.
   - (<https://stackoverflow.com/questions/36933788/using-rxjs-with-typescript>)
@@ -33,11 +35,11 @@ Angular Development with Typescript
   ```json
   {
       "compilerOptions": {
-          ...
+          "..."
           "module": "commonjs",
-          ...
+          "..."
           "sourceMap": true,
-          ...
+          "..."
       }
   }
   ```
