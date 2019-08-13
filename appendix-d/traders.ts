@@ -3,7 +3,7 @@ import { flatMap } from "rxjs/operators";
 
 enum Action {
   Buy = "BUY",
-  Sell = "SELL"
+  Sell = "SELL",
 }
 
 class Order {
@@ -12,7 +12,7 @@ class Order {
     public traderId: number,
     public stock: string,
     public shares: number,
-    public action: Action
+    public action: Action,
   ) {}
 }
 
@@ -24,18 +24,18 @@ class Trader {
 
 const traders$ = new Subject<Trader>();
 
-const traderSubscriber = traders$.subscribe(trader =>
-  console.log(`Trader ${trader.traderName} arrived`)
+const traderSubscriber = traders$.subscribe((trader) =>
+  console.log(`Trader ${trader.traderName} arrived`),
 );
 
 const ordersSubscriber = traders$
-  .pipe(flatMap(trader => trader.orders$))
-  .subscribe(ord =>
+  .pipe(flatMap((trader) => trader.orders$))
+  .subscribe((ord) =>
     console.log(
       `Got order from trader ${ord.traderId} to ${ord.action} ${
         ord.shares
-      } shares of ${ord.stock}`
-    )
+      } shares of ${ord.stock}`,
+    ),
   );
 
 const firstTrader = new Trader(1, "Joe");
